@@ -8,3 +8,4 @@ Project 6 - creates a working directory at the root of tmp directory
 Project 7 - move betty from tmp to my_first_directory
 Project 8 - delete betty
 Project 9 - delete my_first_directory from tmp
+Project 10 - Change the current directory to the previous one
