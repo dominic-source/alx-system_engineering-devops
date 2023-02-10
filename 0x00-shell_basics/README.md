@@ -10,3 +10,5 @@ Project 8 - delete betty
 Project 9 - delete my_first_directory from tmp
 Project 10 - Change the current directory to the previous one
 Project 11 - list the directories in current directory, parent directory, and /boot directory
+Project 12 - print the type of a file
+Project 13 - 
