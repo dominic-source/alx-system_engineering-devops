@@ -13,3 +13,8 @@ Project 11 - list the directories in current directory, parent directory, and /b
 Project 12 - print the type of a file
 Project 13 - create a symbolic link to /bin/ls
 Project 14 - copy files from the current directory to the parent directory
+Project 15 - Move all file that begins with an uppercase letter to /tmp/u
+Project 16 -
+Project 17 -
+Project 18 -
+Project 19 - 
