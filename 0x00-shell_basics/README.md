@@ -15,6 +15,6 @@ Project 13 - create a symbolic link to /bin/ls
 Project 14 - copy files from the current directory to the parent directory
 Project 15 - Move all file that begins with an uppercase letter to /tmp/u
 Project 16 - Delete all file names ending with ~
-Project 17 -
+Project 17 - create directories welcome/to/school
 Project 18 -
 Project 19 - 
