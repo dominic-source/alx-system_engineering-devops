@@ -5,5 +5,6 @@ Project 3 - display current directory content in long format
 Project 4 - display files, including hidden files in long format
 Project 5 - display current directory content long format with user and group ID's displayed numerically
 Project 6 - creates a working directory at the root of tmp directory
-Project 7 - move betty from tmp to my_first_folder
+Project 7 - move betty from tmp to my_first_directory
 Project 8 - delete betty
+Project 9 - delete my_first_directory from tmp
