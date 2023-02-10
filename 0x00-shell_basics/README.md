@@ -4,3 +4,4 @@ Project 2 - change working directory to users working directory
 Project 3 - display current directory content in long format
 Project 4 - display files, including hidden files in long format
 Project 5 - display current directory content long format with user and group ID's displayed numerically
+Project 6 - creates a working directory at the root of tmp directory
