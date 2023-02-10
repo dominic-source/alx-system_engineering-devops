@@ -12,3 +12,4 @@ Project 10 - Change the current directory to the previous one
 Project 11 - list the directories in current directory, parent directory, and /boot directory
 Project 12 - print the type of a file
 Project 13 - create a symbolic link to /bin/ls
+Project 14 - copy files from the current directory to the parent directory
