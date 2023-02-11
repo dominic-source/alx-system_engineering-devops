@@ -1,7 +1,7 @@
 Project 0 - script that switches current user to user betty
 Project 1 - script to printt the effective username of the current user
 Project 2 - print all the groups the current user is part of.
-Project 3 -
+Project 3 - change ownership of a file
 Project 4 -
 Project 5 -
 Project 6 -
