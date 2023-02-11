@@ -1,5 +1,5 @@
 Project 0 - script that switches current user to user betty
-Project 1 -
+Project 1 - script to printt the effective username of the current user
 Project 2 -
 Project 3 -
 Project 4 -
