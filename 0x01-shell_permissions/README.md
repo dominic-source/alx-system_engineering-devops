@@ -6,6 +6,6 @@ Project 4 - create an emmpty file called hello
 Project 5 - add execute permission
 Project 6 - get multiple permission
 Project 7 - Add permission for all users
-Project 8 -
+Project 8 - removes all permissions for all other users and adds persmission only to other users.
 Project 9 -
 Project 10 -
