@@ -9,3 +9,10 @@ Project 7 - Add permission for all users
 Project 8 - removes all permissions for all other users and adds persmission only to other users.
 Project 9 - sets the mode to 753
 Project 10 - sets mode of hello to be olley's mode
+Project 11 - adds execute permission to subdirectories
+Project 12 -
+Project 13 -
+Project 14 -
+Project 15 -
+Project 16 -
+Project 17 - 
