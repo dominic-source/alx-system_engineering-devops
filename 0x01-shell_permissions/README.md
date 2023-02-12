@@ -5,7 +5,7 @@ Project 3 - change ownership of a file
 Project 4 - create an emmpty file called hello
 Project 5 - add execute permission
 Project 6 - get multiple permission
-Project 7 -
+Project 7 - Add permission for all users
 Project 8 -
 Project 9 -
 Project 10 -
