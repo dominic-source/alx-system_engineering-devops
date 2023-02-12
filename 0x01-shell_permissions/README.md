@@ -12,7 +12,7 @@ Project 10 - sets mode of hello to be olley's mode
 Project 11 - adds execute permission to subdirectories
 Project 12 - adds execute permission to directory created
 Project 13 - changes the group owner of a file
-Project 14 -
+Project 14 - Changes the owner and group owner of all the file in the current directory
 Project 15 -
 Project 16 -
 Project 17 - 
