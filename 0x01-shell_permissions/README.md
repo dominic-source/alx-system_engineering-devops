@@ -13,6 +13,6 @@ Project 11 - adds execute permission to subdirectories
 Project 12 - adds execute permission to directory created
 Project 13 - changes the group owner of a file
 Project 14 - Changes the owner and group owner of all the file in the current directory
-Project 15 -
+Project 15 - Changes owner and group owner of a symbolic link
 Project 16 -
 Project 17 - 
