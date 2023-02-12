@@ -10,7 +10,7 @@ Project 8 - removes all permissions for all other users and adds persmission onl
 Project 9 - sets the mode to 753
 Project 10 - sets mode of hello to be olley's mode
 Project 11 - adds execute permission to subdirectories
-Project 12 -
+Project 12 - adds execute permission to directory created
 Project 13 -
 Project 14 -
 Project 15 -
