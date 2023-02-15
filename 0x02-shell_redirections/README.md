@@ -6,6 +6,6 @@ Project 4 - Display the last 10 lines of a file
 Project 5 - Display the first 10 lines of a file 
 Project 6 - Print the third the line of a file
 Project 7 -
-Project 8 -
+Project 8 - save current state of working directory
 Project 9 -
 Project 10 -
