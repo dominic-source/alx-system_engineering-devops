@@ -10,4 +10,9 @@ Project 8 - save current state of working directory
 Project 9 - duplicate last line of a file
 Project 10 - Delete all the .js files
 Project 11 - Count directories and subdirectories
-Project 12 - 
+Project 12 - Print out the 10 most recent files
+Project 13 -
+Project 14 -
+Project 15 -
+Project 16 -
+Project 17 -
