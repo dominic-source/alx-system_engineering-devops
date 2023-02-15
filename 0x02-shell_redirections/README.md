@@ -7,5 +7,5 @@ Project 5 - Display the first 10 lines of a file
 Project 6 - Print the third the line of a file
 Project 7 -
 Project 8 - save current state of working directory
-Project 9 -
+Project 9 - duplicate last line of a file
 Project 10 -
