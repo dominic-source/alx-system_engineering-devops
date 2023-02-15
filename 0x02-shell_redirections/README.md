@@ -8,4 +8,4 @@ Project 6 - Print the third the line of a file
 Project 7 -
 Project 8 - save current state of working directory
 Project 9 - duplicate last line of a file
-Project 10 -
+Project 10 - Delete all the .js files
