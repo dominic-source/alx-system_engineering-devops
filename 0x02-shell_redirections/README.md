@@ -17,8 +17,8 @@ Project 15 - display the number of lines containing the pattern 'root'
 Project 16 - print the 3 lines after finding lines containing the patter 'root'
 Project 17 - print the lines that do not have the pattern 'bin'
 Project 18 - Print only letters
-Project 19 - Replace letters in a line
-Project 20 -
+Project 19 - Replace letters in a input
+Project 20 - delete letters from an input
 Project 21 -
 Project 22 -
 Project 23 -
