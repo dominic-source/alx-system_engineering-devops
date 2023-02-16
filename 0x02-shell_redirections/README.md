@@ -16,7 +16,7 @@ Project 14 - display lines containing the pattern 'root'
 Project 15 - display the number of lines containing the pattern 'root'
 Project 16 - print the 3 lines after finding lines containing the patter 'root'
 Project 17 - print the lines that do not have the pattern 'bin'
-Project 18 -
+Project 18 - Print only letters
 Project 19 -
 Project 20 -
 Project 21 -
