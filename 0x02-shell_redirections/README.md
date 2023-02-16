@@ -14,5 +14,5 @@ Project 12 - Print out the 10 most recent files
 Project 13 - Print unique words from a list of words
 Project 14 - display lines containing the pattern 'root'
 Project 15 - display the number of lines containing the pattern 'root'
-Project 16 -
+Project 16 - print the 3 lines after finding lines containing the patter 'root'
 Project 17 -
