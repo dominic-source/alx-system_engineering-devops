@@ -15,4 +15,11 @@ Project 13 - Print unique words from a list of words
 Project 14 - display lines containing the pattern 'root'
 Project 15 - display the number of lines containing the pattern 'root'
 Project 16 - print the 3 lines after finding lines containing the patter 'root'
-Project 17 -
+Project 17 - print the lines that do not have the pattern 'bin'
+Project 18 -
+Project 19 -
+Project 20 -
+Project 21 -
+Project 22 -
+Project 23 -
+
