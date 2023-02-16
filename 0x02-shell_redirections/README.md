@@ -21,4 +21,4 @@ Project 19 - Replace letters in a input
 Project 20 - delete letters from an input
 Project 21 - reverse characters of a line
 Project 22 - cut files  'done!'
-
+Task 1 - display all empty files and directories
