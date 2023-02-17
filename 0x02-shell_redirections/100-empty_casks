@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -aR | find -empty | cut -d '/' -f2
+find -empty -printf %f\\n
