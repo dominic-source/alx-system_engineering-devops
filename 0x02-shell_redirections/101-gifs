@@ -1,2 +1,2 @@
 #!/bin/bash
-find -iregex .*.\\.gif -type f -printf %f\\n | rev | cut -f 2- -d '.' | rev | sort
+find -iregex .*.\\.gif -type f -printf %f\\n | rev | cut -f 2- -d '.' | rev | sort -V -f
