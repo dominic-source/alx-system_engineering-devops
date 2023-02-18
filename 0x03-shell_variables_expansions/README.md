@@ -1,5 +1,5 @@
 Task 0 - Create an alias to delete files
-Task 1 -
+Task 1 - Print hello user
 Task 2 -
 Task 3 -
 Task 4 -
