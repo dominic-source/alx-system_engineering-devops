@@ -1,6 +1,6 @@
 Task 0 - Create an alias to delete files
 Task 1 - Print hello user
-Task 2 -
+Task 2 - Change the PATH variable to also search for/active
 Task 3 -
 Task 4 -
 Task 5 -
