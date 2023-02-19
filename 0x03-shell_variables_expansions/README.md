@@ -6,7 +6,7 @@ Task 4 - Print environment variables
 Task 5 - Print local variables, functions
 Task 6 - Create environment and local variables 
 Task 7 - Create global variables
-Task 8 -
+Task 8 - Add values to environmental variables
 Task 9 -
 Task 10 -
 Task 11 -
