@@ -2,7 +2,7 @@ Task 0 - Create an alias to delete files
 Task 1 - Print hello user
 Task 2 - Change the PATH variable to also search for/active
 Task 3 - calculate the number of path in the PATH variable
-Task 4 -
+Task 4 - Print environment variables
 Task 5 -
 Task 6 -
 Task 7 -
