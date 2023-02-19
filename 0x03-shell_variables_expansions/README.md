@@ -3,7 +3,7 @@ Task 1 - Print hello user
 Task 2 - Change the PATH variable to also search for/active
 Task 3 - calculate the number of path in the PATH variable
 Task 4 - Print environment variables
-Task 5 -
+Task 5 - Print local variables, functions
 Task 6 -
 Task 7 -
 Task 8 -
