@@ -9,7 +9,7 @@ Task 7 - Create global variables
 Task 8 - Add values to environmental variables
 Task 9 - Divide enviromental variables
 Task 10 - Find the exponent of variables
-Task 11 -
+Task 11 - convert environmenal variables to base 10
 Task 12 -
 Task 13 -
 Task 14 -
