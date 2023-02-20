@@ -12,4 +12,4 @@ Task 10 - Find the exponent of variables
 Task 11 - convert environmenal variables to base 10
 Task 12 - Produce combination of letters
 Task 13 - Print float
-Task 14 -
+Task 100 - convert a hexedecimal variable to base 16
