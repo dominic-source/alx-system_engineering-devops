@@ -13,3 +13,5 @@ Task 11 - convert environmenal variables to base 10
 Task 12 - Produce combination of letters
 Task 13 - Print float
 Task 100 - convert a base 10 variable to base 16
+Task 102
+Task 103 - Addition of base
