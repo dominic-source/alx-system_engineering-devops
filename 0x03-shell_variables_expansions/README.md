@@ -10,6 +10,6 @@ Task 8 - Add values to environmental variables
 Task 9 - Divide enviromental variables
 Task 10 - Find the exponent of variables
 Task 11 - convert environmenal variables to base 10
-Task 12 -
+Task 12 - Produce combination of letters
 Task 13 - Print float
 Task 14 -
