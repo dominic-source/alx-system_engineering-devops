@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# The script will display "Best school" using while loop
+n=0
+while [ $n -lt "10" ]; do
+echo "Best School"
+n=$(($n + 1))
+done
+
