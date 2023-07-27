@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This will display "Best School" in stdout using until
 
 n=0
