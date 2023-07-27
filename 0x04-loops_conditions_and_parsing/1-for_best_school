@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is display "Best school" 10 times
+
+for i in {1..12}
+do
+	if [ $i -le "10" ]
+	then
+		echo "Best School"
+	fi
+done
+
