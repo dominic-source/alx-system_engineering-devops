@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# understand process and pid file relationship
+mkdir -p /var/run/
+pgrep -f "bash ./100-process_and_pid_file" >> /var/run/myscript.pid
+function handle_term {
+	echo "I hate the kill command"
+	rm /var/run/myscript.pid
+	exit 0
+}
+function handle_int {
+	echo "Y U no love me?!"
+}
+function handle_quit {
+	rm /var/run/myscript.pid
+	exit 0
+}
+
+trap "handle_term" SIGTERM
+trap "handle_int" SIGINT
+trap "handle_quit" SIGQUIT
+
+while true
+do
+	echo "To infinity and beyond"
+done
+
