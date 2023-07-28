@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # displays "To infinity and beyond" infinitely
-trap 'echo I am invincible!!!' SIGTERM
-while 'true'
+function handle {
+echo "I am invincible!!!"
+}
+trap 'handle' SIGTERM
+while true
 do
 	echo "To infinity and beyond"
 	sleep 2
