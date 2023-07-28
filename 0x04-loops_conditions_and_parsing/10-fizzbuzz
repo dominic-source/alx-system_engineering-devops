@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# display the numbers from 1 to 100 with other requirement
+
+n=1
+while [ $n -le "100" ]
+do
+  if [ $((n%3)) -eq "0" ] && [ $((n%5)) -eq "0" ]
+  then
+    echo "FizzBuzz"
+  elif [ $((n%3)) -eq "0" ]
+  then
+    echo "Fizz"
+  elif [ $((n%5)) -eq "0" ]
+  then
+    echo "Buzz"
+  else
+    echo $n
+  fi
+  n=$((n + 1))
+done
+
