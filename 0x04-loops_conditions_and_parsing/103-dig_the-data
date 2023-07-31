@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# display id and http status from an Apache log file
+
+awk -F ' ' '{ count[$1]++ } END { for (ip in count) print count[ip] " " $1 " " $9 }'  apache-access.log
+
