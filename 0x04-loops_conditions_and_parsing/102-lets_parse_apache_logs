@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# display id and http status from an Apache log file
+
+awk -F ' ' '{print $1 " " $9}'  apache-access.log
+
