@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Understand TCP and UDP
+netstat -lp
+
