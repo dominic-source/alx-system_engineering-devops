@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# show ip address
+nc -l -p 98
+

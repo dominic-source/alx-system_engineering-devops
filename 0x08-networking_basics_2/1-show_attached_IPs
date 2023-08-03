@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# show ip address
+ifconfig | grep 'inet' | cut -d " " -f10
+
