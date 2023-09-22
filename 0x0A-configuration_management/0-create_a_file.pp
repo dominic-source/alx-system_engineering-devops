@@ -1,7 +1,3 @@
-file { '/tmp':
-  ensure  => directory,
-}
-
 file { '/tmp/school':
   ensure  => file,
   mode    => '0744',
