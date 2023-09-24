@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script connect to a server
+ssh ubuntu:54.89.37.105
