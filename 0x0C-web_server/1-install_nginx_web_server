@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Configure a web server
+
+# Install nginx if it is not already installed
+if ! dpkg -l | grep -qE "ii\s+nginx\s"
+then
+	sudo apt-get -y update
+	sudo apt-get -y install nginx
+fi
+
+# create the html file in /var
+dir_html="/var/www/index.com/html"
+sudo mkdir -p "$dir_html" && sudo chown -R "$USER:$USER" "$dir_html"
+sudo chmod -R 755 "/var/www"
+echo "Hello World!" > "$dir_html"/index.html
+
+# create configuration for index.com
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/index2.com
+
+# link configuration file to enabled file
+sudo ln -sf /etc/nginx/sites-available/index2.com /etc/nginx/sites-enabled/
+
+# remove default if it exist
+sudo rm -f /etc/nginx/sites-enabled/default
+
+# Edit configuration file
+li="# server_names_hash_bucket_size 64;"
+re="server_names_hash_bucket_size 64;"
+file="/etc/nginx/nginx.conf"
+sudo sed -i "s/$li/$re/" "$file"
+
+# path to nginx web setup
+sites="/etc/nginx/sites-available/index2.com"
+
+# Edit index.com site config
+li2="server_name _;"
+re2="server_name index2.com www.index2.com;"
+sudo sed -i "s/$li2/$re2/" "$sites"
+
+# Replace root
+li3="root /var/www/html;"
+re3="root /var/www/index.com/html;"
+sudo sed -i "s|$li3|$re3|" "$sites"
+
+# Start nginx
+sudo service nginx start
