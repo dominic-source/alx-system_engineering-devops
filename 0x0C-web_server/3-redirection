@@ -8,4 +8,4 @@ file="/etc/nginx/sites-available/index2.com"
 content="\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n"
 sudo sed -i "47s|^|$content|" "$file"
 
-sudo service nginx start
+sudo service nginx restart

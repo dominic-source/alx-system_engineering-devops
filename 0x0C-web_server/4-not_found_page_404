@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# configure 404 page
+./3-redirection
+
+file="/etc/nginx/sites-available/index2.com"
+html="/var/www/index.com/html/error404.html"
+sudo touch "$html"
+sudo chown "$USER:$USER" "$html"
+sudo chmod 755 "$html"
+echo "Ceci n'est pas une page" > "/var/www/index.com/html/error404.html"
+content="\n\terror_page 404 /error404.html;\n"
+sudo sed -i "47s|^|$content|" "$file"
+
+sudo service nginx restart
