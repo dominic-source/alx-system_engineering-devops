@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Configure a redirect in nginx
+
+./1-install_nginx_web_server
+
+file="/etc/nginx/sites-available/index2.com"
+
+content="\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n"
+sudo sed -i "47s|^|$content|" "$file"
+
+sudo service nginx start
