@@ -4,10 +4,12 @@
 package { 'nginx':
   ensure  => installed,
 }
+file { '/var/www/index.com':
+  ensure  => directory,
+}
 
-# Ensures that augeas puppet module is install
-package { 'augeas':
-  ensure   => installed,
+file { '/var/www/index.com/html':
+  ensure  => directory,
 }
 
 # create html content file
@@ -33,44 +35,43 @@ file { '/etc/nginx/sites-enabled/index2.com':
 }
 
 # deletes default file in sites-enabled
-file { '/etc/nginx/sites-enabled/default':
-  ensure  => absent,
-}
+#file { '/etc/nginx/sites-enabled/default':
+#  ensure  => absent,
+#}
 
 # Edit configuration file
-augeas { 'edit_conf_hash_buck':
-  context => '/etc/nginx/nginx.conf',
-  changes => [
-    'set server_names_hash_bucket_size 64',
-  ],
-  require => Package['augeas'],
+file_line { 'edit_conf_hash_buck':
+  ensure => present,
+  line   => '	server_names_hash_bucket_size 64;',
+  match  => '# server_names_hash_bucket_size 64;',
+  path   => '/etc/nginx/nginx.conf',
 }
 
-stdlib::file_line { 'edit site configuration file':
+file_line { 'edit site configuration file':
   ensure   => present,
-  line     => 'server_name index2.com www.index2.com;',
+  line     => '	server_name index2.com www.index2.com;',
   match    => 'server_name _;',
   path     => $site,
   multiple => false,
 }
 
-stdlib::file_line { 'edit site html configuration file':
+file_line { 'edit site html configuration file':
   ensure   => present,
-  line     => 'root /var/www/index.com/html;',
+  line     => '	root /var/www/index.com/html;',
   match    => 'root /var/www/html;',
   path     => $site,
   multiple => false,
 }
 
-stdlib::file_line { 'edit site redirect configuration':
+file_line { 'edit site redirect configuration':
   ensure   => present,
-  line     => '\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {',
-  match    => 'location / {',
+  line     => "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {",
+  match    => '^\s+location \/ {',
   path     => $site,
   multiple => false,
 }
 
 service { 'nginx':
-  ensure   => running,
-  provider => service,
+  provider => 'service',
+  restart  => true,
 }
