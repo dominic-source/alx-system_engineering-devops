@@ -72,6 +72,5 @@ file_line { 'edit site redirect configuration':
 }
 
 service { 'nginx':
-  provider => 'service',
-  restart  => true,
+  ensure  => 'running',
 }
