@@ -15,3 +15,5 @@ content="\nbackend web-backend\n\tbalance roundrobin\n\tmode http\n\tserver s1 3
 content2="\nfrontend web-frontend\n\tmode http\n\tbind *:80\n\n\tacl url_stat path_beg /\n\tuse_backend web-backend if url_stat\n\tdefault_backend web-backend"
 sudo sed -i '$a\'"$content" $file
 sudo sed -i '$a\'"$content2" $file
+# manage the Haproxy
+sudo /etc/init.d/haproxy restart
