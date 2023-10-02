@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2154
+# Configure a web server
+
+# Install nginx if it is not already installed
+if ! dpkg -l | grep -qE "ii\s+haproxy\s"
+then
+        sudo apt-get -y install --no-install-recommends software-properties-common
+        sudo add-apt-repository ppa:vbernat/haproxy-2.0
+	sudo apt-get install haproxy=2.0.\*
+fi
+file="/etc/haproxy/haproxy.cfg"
+
+content="\nbackend web-backend\n\tbalance roundrobin\n\tmode http\n\tserver s1 3.94.185.85:80 check\n\tserver s2 18.204.14.177:80 check"
+content2="\nfrontend web-frontend\n\tmode http\n\tbind *:80\n\n\tacl url_stat path_beg /\n\tuse_backend web-backend if url_stat\n\tdefault_backend web-backend"
+sudo sed -i '$a\'"$content" $file
+sudo sed -i '$a\'"$content2" $file
