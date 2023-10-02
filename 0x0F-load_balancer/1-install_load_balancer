@@ -16,4 +16,4 @@ content2="\nfrontend web-frontend\n\tmode http\n\tbind *:80\n\n\tacl url_stat pa
 sudo sed -i '$a\'"$content" $file
 sudo sed -i '$a\'"$content2" $file
 # manage the Haproxy
-sudo /etc/init.d/haproxy restart
+sudo service haproxy start
