@@ -48,5 +48,17 @@ file="/etc/nginx/sites-available/index2.com"
 content="\t\tadd_header X-Served-By $(cat /etc/hostname);\n"
 sudo sed -i "49s|^|$content|" "$file"
 
+content="\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n"
+sudo sed -i "47s|^|$content|" "$file"
+
+
+html="/var/www/index.com/html/error404.html"
+sudo touch "$html"
+sudo chown "$USER:$USER" "$html"
+sudo chmod 755 "$html"
+echo "Ceci n'est pas une page" > "/var/www/index.com/html/error404.html"
+content="\n\terror_page 404 /error404.html;\n"
+sudo sed -i "47s|^|$content|" "$file"
+
 # Start nginx
 sudo service nginx start
