@@ -44,7 +44,7 @@ sudo sed -i "s|$li3|$re3|" "$sites"
 
 file="/etc/nginx/sites-available/index2.com"
 
-content="\t\tadd_header X-Served-By \"$(cat /etc/hostname)\";\n"
+content="\t\tadd_header X-Served-By $(cat /etc/hostname);\n"
 sudo sed -i "49s|^|$content|" "$file"
 
 # Start nginx
