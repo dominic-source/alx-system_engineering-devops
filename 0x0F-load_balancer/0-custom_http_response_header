@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2154
 # Configure a web server
 
 # Install nginx if it is not already installed
