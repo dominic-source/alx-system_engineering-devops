@@ -5,11 +5,11 @@
 # Install nginx if it is not already installed
 if ! dpkg -l | grep -qE "ii\s+haproxy\s"
 then
-    sudo apt-get -y update
-    sudo apt-get -y install haproxy
-    #sudo apt-get -y install --no-install-recommends software-properties-common
-    #sudo add-apt-repository ppa:vbernat/haproxy-2.0
-    #sudo apt-get install haproxy=2.0.\*
+    #sudo apt-get -y update
+    #sudo apt-get -y install haproxy
+    sudo apt-get -y install --no-install-recommends software-properties-common
+    sudo add-apt-repository ppa:vbernat/haproxy-2.0
+    sudo apt-get install haproxy=2.0.\*
 fi
 file="/etc/haproxy/haproxy.cfg"
 
