@@ -4,12 +4,23 @@
 package { 'nginx':
   ensure  => installed,
 }
+
 file { '/var/www/index.com':
   ensure  => directory,
 }
 
 file { '/var/www/index.com/html':
   ensure  => directory,
+}
+
+#file { '/var/www/index.com/html/error404.html':
+#  ensure  => present,
+#}
+
+file { '/var/www/index.com/html/error404.html':
+  ensure  => file,
+  mode    => '0755',
+  content => "Ceci n'est pas une page",
 }
 
 # create html content file
@@ -33,11 +44,6 @@ file { '/etc/nginx/sites-enabled/index2.com':
   ensure => link,
   target => $site,
 }
-
-# deletes default file in sites-enabled
-#file { '/etc/nginx/sites-enabled/default':
-#  ensure  => absent,
-#}
 
 # Edit configuration file
 file_line { 'edit_conf_hash_buck':
@@ -66,6 +72,14 @@ file_line { 'edit site html configuration file':
 file_line { 'edit site redirect configuration':
   ensure   => present,
   line     => "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {",
+  match    => '^\s+location \/ {',
+  path     => $site,
+  multiple => false,
+}
+
+file_line { 'add 404 page for errors':
+  ensure   => present,
+  line     => '\n\terror_page 404 /error404.html;\n\tlocation \/ {',
   match    => '^\s+location \/ {',
   path     => $site,
   multiple => false,
