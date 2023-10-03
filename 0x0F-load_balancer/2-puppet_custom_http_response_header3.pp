@@ -1,9 +1,6 @@
 # Install nginx and configure the server
 
 # Ensures that nginx is installed
-exec { '/usr/bin/env apt-get -y update':
-}
-
 package { 'nginx':
   ensure  => installed,
 }
@@ -37,46 +34,38 @@ file { '/etc/nginx/sites-enabled/index2.com':
   target => $site,
 }
 
+# deletes default file in sites-enabled
+#file { '/etc/nginx/sites-enabled/default':
+#  ensure  => absent,
+#}
 
 # Edit configuration file
 $line1 = ' server_names_hash_bucket_size 64;'
 $match1 = '# server_names_hash_bucket_size 64;'
 $path1 = '/etc/nginx/nginx.conf'
-file_line { 'edit configuration file':
-  ensure  => present,
-  path    => ${path},
-  line    => ${line1},
-  match   => ${match1},
+exec { 'edit configuration file':
+  command  => 'sed -i "s|$match1|$line1|" "$path1"',
 }
 
 # Edit index.com site config
 $line2 = " server_name index2.com www.index2.com;\n\tadd_header X-Served-By ${facts['networking']['hostname']}"
 $match2 = 'server_name _;'
-file_line { 'edit site configuration file':
-  ensure  => present,
-  path    => ${site},
-  line    => ${line2},
-  match   => ${match2},
+exec { 'edit site configuration file':
+  command => 'sed -i "s|$match2|$line2|" "$site"',
 }
 
 # Replace root
 $line3 = ' root /var/www/index.com/html;'
 $match3 = 'root /var/www/html;'
-file_line { 'edit site html configuration file':
-  ensure  => present,
-  path    => ${site},
-  line    => ${line3},
-  match   => ${match3},
+exec { 'edit site html configuration file':
+  command => 'sed -i "s|$match3|$line3|" "$site"',
 }
 
 # Redirection
 $line4 = "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {"
 $match4 = '^\s+location \/ {'
-file_line { 'edit site redirect configuration':
-  ensure  => present,
-  path    => ${site},
-  line    => ${line4},
-  match   => ${match4},
+exec { 'edit site redirect configuration':
+  command => 'sed -i "s|$match4|$line4|" "$site"',
 }
 
 service { 'nginx':
