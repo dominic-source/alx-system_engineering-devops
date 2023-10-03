@@ -5,22 +5,8 @@
   ensure  => installed,
 }
 
--> file { '/var/www/index.com':
-  ensure  => directory,
-}
-
--> file { '/var/www/index.com/html':
-  ensure  => directory,
-}
-
--> file { '/var/www/index.com/html/error404.html':
-  ensure  => file,
-  mode    => '0755',
-  content => "Ceci n'est pas une page",
-}
-
 # create html content file
--> file { '/var/www/index.com/html/index.html':
+-> file { '/var/www/html/index.html':
   ensure  => file,
   mode    => '0755',
   content => 'Hello World!',
@@ -41,44 +27,11 @@ $site = '/etc/nginx/sites-available/index2.com'
   target => $site,
 }
 
-# Edit configuration file
--> file_line { 'edit_conf_hash_buck':
-  ensure => present,
-  line   => '	server_names_hash_bucket_size 64;',
-  match  => '# server_names_hash_bucket_size 64;',
-  path   => '/etc/nginx/nginx.conf',
-}
-
--> file_line { 'edit site configuration file':
-  ensure   => present,
-  line     => '	server_name index2.com www.index2.com;',
-  match    => 'server_name _;',
-  path     => $site,
-  multiple => false,
-}
-
--> file_line { 'edit site html configuration file':
-  ensure   => present,
-  line     => '	root /var/www/index.com/html;',
-  match    => 'root /var/www/html;',
-  path     => $site,
-  multiple => false,
-}
-
 -> file_line { 'edit site redirect configuration':
-  ensure   => present,
-  line     => "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {",
-  match    => '^\s+location \/ {',
-  path     => $site,
-  multiple => false,
-}
-
--> file_line { 'add 404 page for errors':
-  ensure   => present,
-  line     => '\n\terror_page 404 /error404.html;\n\tlocation \/ {',
-  match    => '^\s+location \/ {',
-  path     => $site,
-  multiple => false,
+  ensure => present,
+  line   => "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {",
+  match  => '^\s+location \/ {',
+  path   => $site,
 }
 
 -> service { 'nginx':
