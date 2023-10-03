@@ -29,9 +29,9 @@ $site = '/etc/nginx/sites-available/index2.com'
 
 -> file_line { 'edit site redirect configuration':
   ensure => present,
-  line   => "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {",
-  match  => '^\s+location \/ {',
   path   => $site,
+  line   => 'rewrite ^/redirect_me https://google.com permanent;',
+  after  => 'liston 80 default_server;',
 }
 
 -> service { 'nginx':
