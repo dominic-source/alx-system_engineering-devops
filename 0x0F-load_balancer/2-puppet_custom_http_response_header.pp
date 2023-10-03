@@ -6,9 +6,6 @@ exec { '/usr/bin/env apt-get -y update':
 -> package { 'nginx':
   ensure  => installed,
 }
--> file { '/var/www/html/index.html':
-  content => 'Holberton School!',
-}
 
 # Edit index.com site config
 -> file_line { 'edit config file and add header':
