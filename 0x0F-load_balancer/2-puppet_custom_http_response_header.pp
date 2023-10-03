@@ -7,6 +7,9 @@ exec { '/usr/bin/env apt-get -y update':
 package { 'nginx':
   ensure  => installed,
 }
+file { '/var/www/html/index.html':
+  content => 'Holberton School!',
+}
 
 # Edit index.com site config
 $line2 = "\tadd_header X-Served-By ${hostname};"
