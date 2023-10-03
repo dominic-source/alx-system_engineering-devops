@@ -15,7 +15,7 @@ file { '/var/www/html/index.html':
 file_line { 'edit config file and add header':
   ensure => present,
   path   => '/etc/nginx/sites-available/default',
-  line   => '\tadd_header X-Served-By ${hostname};',
+  line   => "\tadd_header X-Served-By ${hostname};",
   after  => 'server_name _;',
 }
 
