@@ -40,35 +40,32 @@ file { '/etc/nginx/sites-enabled/index2.com':
 #}
 
 # Edit configuration file
-file_line { 'edit_conf_hash_buck':
-  ensure => present,
-  line   => '	server_names_hash_bucket_size 64;',
-  match  => '# server_names_hash_bucket_size 64;',
-  path   => '/etc/nginx/nginx.conf',
+$line = ' server_names_hash_bucket_size 64;'
+$match = '# server_names_hash_bucket_size 64;'
+$path = '/etc/nginx/nginx.conf'
+exec { 'edit configuration file':
+  command  => 'sed -i "s|$match|$line|" "$path"',
 }
 
-file_line { 'edit site configuration file':
-  ensure   => present,
-  line     => "	server_name index2.com www.index2.com;\n\tadd_header X-Served-By ${::hostname}",
-  match    => 'server_name _;',
-  path     => $site,
-  multiple => false,
+# Edit index.com site config
+$line2 = " server_name index2.com www.index2.com;\n\tadd_header X-Served-By ${facts['networking']['hostname']}"
+$match2 = 'server_name _;'
+exec { 'edit site configuration file':
+  command => 'sed -i "s|$match2|$line2|" "$site"',
 }
 
-file_line { 'edit site html configuration file':
-  ensure   => present,
-  line     => '	root /var/www/index.com/html;',
-  match    => 'root /var/www/html;',
-  path     => $site,
-  multiple => false,
+# Replace root
+$line3 = ' root /var/www/index.com/html;'
+$match3 = 'root /var/www/html;'
+exec { 'edit site html configuration file':
+  command => 'sed -i "s|$match3|$line3|" "$site"',
 }
 
-file_line { 'edit site redirect configuration':
-  ensure   => present,
-  line     => "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {",
-  match    => '^\s+location \/ {',
-  path     => $site,
-  multiple => false,
+# Redirection
+$line4 = "\n\tlocation /redirect_me {\n\t\treturn 301 https://google.com;\n\t}\n\n\tlocation / {",
+$match4 = '^\s+location \/ {',
+exec { 'edit site redirect configuration':
+  command => 'sed -i "s|$match4|$line4|" "$site"',
 }
 
 service { 'nginx':
