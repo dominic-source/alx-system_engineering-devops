@@ -11,19 +11,7 @@ file { '/var/www/html/index.html':
 }
 
 # declare site configuration path
-$site = '/etc/nginx/sites-available/index2.com'
-
-# duplicate configuration file
-file { $site:
-  ensure => present,
-  source => '/etc/nginx/sites-available/default',
-}
-
-# Link index2.com file to sites-enabled folder
-file { '/etc/nginx/sites-enabled/index2.com':
-  ensure => link,
-  target => $site,
-}
+$site = '/etc/nginx/sites-available/default'
 
 file_line { 'edit site redirect configuration':
   ensure => present,
