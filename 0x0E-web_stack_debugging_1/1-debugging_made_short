@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Configure and debug nginx server to listen on port 80
-sed -i -e 's|listen 8080|listen 80|' -e 's|listen [::]:8080|listen [::]:80|' "/etc/nginx/sites-enabled/default"
+sed -i -e "s|listen 8080|listen 80|" -e "s|listen [::]:8080|listen [::]:80|" "/etc/nginx/sites-enabled/default"
 service nginx start
 kill -9 "$(cat /var/run/nginx.pid)"
