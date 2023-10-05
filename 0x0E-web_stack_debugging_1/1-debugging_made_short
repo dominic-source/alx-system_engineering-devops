@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Configure and debug nginx server to listen on port 80
 sudo sed -i "s|8080|80|g" "/etc/nginx/sites-enabled/default"
-sudo service nginx start
 pkill -1 nginx
