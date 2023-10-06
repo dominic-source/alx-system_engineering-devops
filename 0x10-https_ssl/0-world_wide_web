@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # use awk and bash function to print out from dig
-
+# shellcheck disable=SC2086
 dig_out ()
 {
     domain=$1
