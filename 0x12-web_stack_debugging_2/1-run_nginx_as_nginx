@@ -2,7 +2,8 @@
 #Change nginx user from root to nginx and grant necessary priviledges
 
 # add user nginx
-sudo adduser --disabled-password --gecos "" -q nginx
+sudo useradd nginx > /dev/null 2>&1
+sudo passwd -d nginx > /dev/null 2>&1
 
 # Edit configuration file
 sudo sed -i '1s|^user .*|user nginx;|' /etc/nginx/nginx.conf
@@ -18,7 +19,9 @@ chmod 664 /var/log/nginx/*
 chown root:nginx -R /var/www/html/
 chmod g+r -R /var/www/html/
 
-chown root:nginx -R sites-enabled/
-chown root:nginx -R sites-available/
+chown root:nginx -R /etc/nginx/sites-enabled/
+chown root:nginx -R /etc/nginx/sites-available/
+
+chmod 1777 /run
 
 service nginx restart
