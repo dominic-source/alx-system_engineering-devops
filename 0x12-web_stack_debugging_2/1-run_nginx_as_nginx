@@ -27,8 +27,8 @@ chown root:nginx -R /etc/nginx/sites-available/
 chmod 1777 /run
 
 # Kill any nginx process present
-#pkill nginx
+pkill nginx
 
 # restart nginx
-service nginx restart
-#sudo -u nginx service nginx restart
+sudo service nginx reload > /dev/null 2>&1
+sudo -u nginx service nginx restart
