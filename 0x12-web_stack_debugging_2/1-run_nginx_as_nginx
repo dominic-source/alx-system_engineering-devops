@@ -30,5 +30,5 @@ chmod 1777 /run
 #pkill nginx
 
 # restart nginx
-sudo service nginx restart
+service nginx restart
 #sudo -u nginx service nginx restart
