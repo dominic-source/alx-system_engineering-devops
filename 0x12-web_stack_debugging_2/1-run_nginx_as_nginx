@@ -23,5 +23,4 @@ chmod g+r -R /var/www/html/
 
 chown root:nginx -R /etc/nginx/sites-enabled/
 chown root:nginx -R /etc/nginx/sites-available/
-pkill nginx
 sudo -u nginx service nginx restart
