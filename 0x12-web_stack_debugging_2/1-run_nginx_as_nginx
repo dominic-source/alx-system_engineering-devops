@@ -8,6 +8,8 @@ sudo passwd -d nginx > /dev/null 2>&1
 # Edit configuration file
 sudo sed -i '1s|^user .*|user nginx;|' /etc/nginx/nginx.conf
 
+sudo sed -i 's|^\s*listen 80 .*|\tlisten 8080 default_server;|' /etc/nginx/sites-available/default
+sudo sed -i 's|^\s*listen \[::\]:80 .*|\tlisten [::]:8080 default_server;|' /etc/nginx/sites-available/default
 # grant nginx user necessary least priviledges
 chown root:nginx /etc/nginx/nginx.conf
 chmod 644 /etc/nginx/nginx.conf
@@ -21,7 +23,5 @@ chmod g+r -R /var/www/html/
 
 chown root:nginx -R /etc/nginx/sites-enabled/
 chown root:nginx -R /etc/nginx/sites-available/
-
-chmod 1777 /run
 
 service nginx restart
