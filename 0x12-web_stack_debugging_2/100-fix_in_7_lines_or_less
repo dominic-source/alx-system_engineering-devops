@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Change user from root to nginx and grant necessary priviledges
-sudo sed -i '1s|#user www-data|user nginx|' /etc/nginx/nginx.conf
+sudo sed -i '1s|^.?user www-data|user nginx|' /etc/nginx/nginx.conf
 sudo sed -i 's|^\s*listen 80|\tlisten 8080|' /etc/nginx/sites-available/default
 sudo chmod 1777 /etc/nginx/nginx.conf
 sudo pkill apache2
