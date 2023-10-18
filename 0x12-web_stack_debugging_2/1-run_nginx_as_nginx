@@ -2,8 +2,8 @@
 #Change nginx user from root to nginx and grant necessary priviledges
 
 # add user nginx
-sudo useradd nginx > /dev/null 2>&1
-sudo passwd -d nginx > /dev/null 2>&1
+#sudo useradd nginx > /dev/null 2>&1
+#sudo passwd -d nginx > /dev/null 2>&1
 
 # Edit configuration file
 sudo sed -i '1s|^user .*|user nginx;|' /etc/nginx/nginx.conf
@@ -24,7 +24,8 @@ chmod 770 -R /run/nginx/
 sudo sed -i 's|pid /run/nginx.pid;|pid /run/nginx/nginx.pid;|' /etc/nginx/nginx.conf
 
 # Kill any nginx process present
-#sudo pkill nginx
+sudo pkill nginx
+chmod 1777 -R /run
 
 # restart nginx
 sudo service nginx reload > /dev/null 2>&1
