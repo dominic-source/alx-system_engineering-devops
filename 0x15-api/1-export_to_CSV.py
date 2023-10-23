@@ -3,9 +3,9 @@
 an API end point
 """
 
+import csv
 import requests
 import sys
-import csv
 
 
 def call_me():
@@ -19,10 +19,10 @@ def call_me():
         res_t = requests.get(url_todo_t).json()
         filename = f"{arg}.csv"
         with open(filename, "w") as csvfile:
-            csv_writer = csv.writer(csvfile)
+            csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_NONNUMERIC)
             for data in res_t:
-                info = [res.get("id"), res.get("username"),
-                        data.get("completed"), data.get("title")]
+                info = [str(res.get("id")), str(res.get("username")),
+                        str(data.get("completed")), str(data.get("title"))]
                 csv_writer.writerow(info)
     except ValueError:
         arg = None
