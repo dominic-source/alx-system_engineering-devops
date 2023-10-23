@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This module houses a function that is used to get information from
-an API end point
+"""This module contains a function used to get information from
+an API end point and stores it in a json file
 """
 
 import json
@@ -11,14 +11,17 @@ import sys
 def call_me():
     """The function get info from API"""
     try:
-        arg = int(sys.argv[1])i
+        arg = int(sys.argv[1])
+
         # construct url for the api transaction
         url_user = f"https://jsonplaceholder.typicode.com/users/{arg}"
         url_todo_t = f"https://jsonplaceholder.typicode.com/users/{arg}/todos"
+
         # Make the request
         res = requests.get(url_user).json()
         res_t = requests.get(url_todo_t).json()
         filename = f"{arg}.json"
+
         # Open the file for write into json file
         with open(filename, "w") as jsonfile:
             my_data = {res.get("id"): []}
