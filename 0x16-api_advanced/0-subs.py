@@ -15,9 +15,9 @@ def number_of_subscribers(subreddit):
     if res.status_code == requests.codes.ok:
         data = res.json()
         data = data.get('data').get('subscribers')
-        print(data)
+        return data
     else:
-        print(0)
+        return 0
 
 
 if __name__ == '__main__':
