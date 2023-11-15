@@ -69,7 +69,7 @@ server {
         }
 
         location / {
-                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
+                alias web_dynamic/static/;
                 proxy_pass http://127.0.0.1:5003;
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
