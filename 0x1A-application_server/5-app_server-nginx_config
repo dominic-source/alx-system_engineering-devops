@@ -46,7 +46,6 @@ server {
 
         server_name 3.94.185.85 index2.com www.index2.com;
 
-        add_header X-Served-By 301964-web-01;
         location ~ ^/api/ {
                 add_header X-Served-By 301964-web-01;
                 proxy_pass http://0.0.0.0:5002;
