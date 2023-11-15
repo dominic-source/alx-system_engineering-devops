@@ -44,7 +44,7 @@ server {
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
 
-        server_name 3.94.185.85 index2.com www.index2.com;
+        server_name index2.com www.index2.com;
 
         location ~ ^/api/ {
                 add_header X-Served-By 301964-web-01;
@@ -69,7 +69,7 @@ server {
         }
 
         location / {
-                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
                 proxy_pass http://127.0.0.1:5003;
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
