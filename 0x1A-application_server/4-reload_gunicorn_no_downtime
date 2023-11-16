@@ -1,0 +1,3 @@
+# Reload configuration
+sudo systemctl daemon-reload
+sudo systemctl reload gunicorn
