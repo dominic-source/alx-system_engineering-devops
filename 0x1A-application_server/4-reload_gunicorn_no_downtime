@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Reload configuration
+sudo apt-get install lsof 1>dev/null
 sudo kill -HUP "$(sudo lsof -iTCP:5003 -sTCP:LISTEN -t | head -n 1)"
