@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Reload configuration
-sudo systemctl daemon-reload
-sudo systemctl reload gunicorn
+sudo kill -HUP "$(sudo lsof -iTCP:5003 -sTCP:LISTEN -t | head -n 1)"

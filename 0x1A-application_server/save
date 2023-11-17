@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Reload configuration
+#for i in "$(sudo lsof -iTCP:22 -sTCP:LISTEN -t)"
+for i in {1..4}
+do
+	if [ "echo $((i%2 == 0))" ]
+	then
+		echo "$i"
+	fi
+done
